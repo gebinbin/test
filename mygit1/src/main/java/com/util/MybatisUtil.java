@@ -1,5 +1,5 @@
 
-package util;
+package com.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * 功能：TODO(描述这个类的作用) <br/>
- * 日期：2016年5月20日 下午4:14:41 <br/>
+ * 日期�?016�?�?0�?下午4:14:41 <br/>
  *
  * @since JDK1.7
  * @author gebin
@@ -33,12 +33,12 @@ public class MybatisUtil {
             
         }
         
-        //参数表明，有些连表查询的表前缀,没前缀就为空串
+        //参数表明，有些连表查询的表前�?没前�?��为空�?
 //        getColumnName("sys_org", "");
     }
 
     /**
-     * TODO(这里描述这个方法的作用). <br/>
+     * TODO(这里描述这个方法的作�?. <br/>
      *
      * @param string 字段
      * @param prefix 字段前缀
@@ -92,7 +92,7 @@ public class MybatisUtil {
     }
     
     /**
-     * TODO(获取表所有字段). <br/>
+     * TODO(获取表所有字�?. <br/>
      *
      * @param tableName
      * @return
