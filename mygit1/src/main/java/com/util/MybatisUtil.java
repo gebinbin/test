@@ -22,19 +22,19 @@ public class MybatisUtil {
     public static void main(String[] args) {
         String packageName = "com.yonyou.boss.entity";
         String module = "productmodule";
-        String entityClassName = "SysOrg";
-        String mapperClassName = "SysOrg";
+        String entityClassName = "User";
+        String mapperClassName = "User";
         
         try {
             Class class1 = Class.forName(entityClassName);
             System.out.println(class1.getPackage().getName());
         }
         catch (ClassNotFoundException e) {
-            
+        	
         }
         
         //参数表明，有些连表查询的表前�?没前�?��为空�?
-//        getColumnName("sys_org", "");
+        getColumnName("user", "");
     }
 
     /**
@@ -82,8 +82,8 @@ public class MybatisUtil {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url="jdbc:mysql://10.10.5.24:3306/boss?useUnicode=true&characterEncoding=utf-8";
-            connection = DriverManager.getConnection(url, "group", "cluster@yonyou.com");
+            String url="jdbc:mysql://192.168.32.129:3306/mysql?useUnicode=true&characterEncoding=utf-8";
+            connection = DriverManager.getConnection(url, "root", "root123");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -106,7 +106,10 @@ public class MybatisUtil {
             ps = conn.prepareStatement("select COLUMN_NAME from information_schema.COLUMNS where table_name = '" + tableName + "' and table_schema = 'boss'");
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(rs.getString("COLUMN_NAME"));
+            	String aString = rs.getString("COLUMN_NAME");
+            	System.out.println(aString);
+                list.add(aString);
+                break;
             }
         }
         catch (SQLException e) {
